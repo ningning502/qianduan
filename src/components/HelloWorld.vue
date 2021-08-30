@@ -2,15 +2,16 @@
   <div id="list-rendering">
   <ol>
   <!-- 创建一个 todo-item 组件实例 -->
-  <todo-item v-for="item in todos"
+  <todo-item v-for="item in todos" :key="item"
       v-bind:todo="item"
       ></todo-item>
 </ol>
+<p>sad</p>
 </div>
 </template>
 
 <script>
-const ListRendering = {
+export const ListRendering = {
   data() {
     return {
       todos: [
