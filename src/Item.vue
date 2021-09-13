@@ -36,9 +36,11 @@ p {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  text-align: center;
   width: 100px;
   height: 50px;
   background-color: aqua;
+  border-radius: 20px;
+
 }
 </style>

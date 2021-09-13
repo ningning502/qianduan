@@ -1,6 +1,15 @@
 <template>
+<div>
 <div id="counter">
   Counter: {{ counter }}
+</div>
+<div id="bind-attribute"  >
+  <span v-bind:title="message" >
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+  <p>{{message1}}</p>
+  <button v-on:click = "reverseMessage">反转message </button>
+</div>
 </div>
 </template>
 
@@ -11,7 +20,9 @@ export default {
   },
    data() {
     return {
-      counter: 0
+      counter: 0,
+      message: 'You loaded this page on' + new Date().toLocaleString() ,
+      message1: 'hello vue.js'
     }
   },
   mounted(){
@@ -19,10 +30,14 @@ export default {
      this.counter++
     }, 1000)
   },
-
   method:{
+           reverseMessage(){
+      this.message1 = this.message1.split('').reverse().join('')
+    }    
+  }
+
 }
-}
+
 
 
 </script>
